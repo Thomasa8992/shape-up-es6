@@ -1,3 +1,121 @@
+.text-align-center {
+    text-align: center;
+}
+
+.margin-20 {
+    margin: 20px 20px;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+ .relative {
+     position: relative
+ }
+
+ .primary-color {
+     background-color: lightgreen;
+ }
+
+ .secondary-color{
+     background-color: pink;
+ }
+
+ .background-color{
+    background-color: yellow; 
+ }
+
+.border-color-yellow {
+    border: yellow solid 5px;
+}
+
+.border-color-secondary {
+    border: pink solid 5px;
+}
+
+.border-color-primary {
+    border: lightgreen solid 5px;
+}
+
 body {
-    background-color: yellow;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: blue;
+}
+
+input {
+    margin-bottom: 3px;
+    display: block; 
+    font-size: 1.2em;
+    transform: translate(20%, 0);
+    padding-left: 10px;
+}
+
+button {
+    font-size: 1.1em;
+}
+
+#canvas {
+    height: 600px;
+    width: 850px;
+}
+
+#shape-input{
+    width: 300px; 
+    height: 550px;
+    padding: 25px 0;
+}
+
+#whole-div {
+    margin: 20px 0;
+}
+
+#bottom-panel {
+    margin: 20px 0;
+    width: 1200px;
+    height: 300px;
+}
+
+.bottom{
+    padding: 50px 20px;
+    width: 550px;
+    font-size:1.5em;
+}
+
+.square {
+	width: 100px;
+	height: 100px;
+	background: red;
+}
+
+.rectangle {
+	width: 200px;
+	height: 100px;
+	background: red;
+}
+
+.triangle {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid red;
+}
+
+.circle {
+	width: 100px;
+	height: 100px;
+	background: red;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
 }

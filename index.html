@@ -7,7 +7,54 @@
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
 </head>
-<body>
+<body class="background-color">
+    <h1>Shape Up or Shape Out</h1>
+<div id="whole-div">
+
+    <div id="shape-input" class="text-align-center relative primary-color float-left border-color-secondary">
+        <div>
+            <h2>Rectangle</h2>
+            <input type="text" placeholder="height">
+            <input type="text" placeholder="width">
+            <button>Insert</button>
+        </div>
+        <div>
+            <h2>Square</h2>
+            <input type="text" placeholder="side-length">
+            <button>Insert</button>
+        </div>
+        <div>
+            <h2>Circle</h2>
+            <input type="text" placeholder="radius">
+            <button>Insert</button>
+        </div>
+        <div>
+            <h2> Isoceles Right Triangle</h2>
+            <input type="text" placeholder="height">
+            <button>Insert</button>
+        </div>
+    </div>
+</div>
+
+    <div id="canvas" class="secondary-color relative float-right border-color-primary">
+        <div class="square margin-20"></div>
+        <div class="rectangle margin-20"></div>
+        <div class="circle margin-20"></div>
+        <div class="triangle margin-20"></div>        
+    </div>
+
+    <div id="bottom-panel" class="primary-color float-right border-color-secondary">
+        <div id="left-bottom" class="bottom float-left">
+            <p>Shape Name:</p>
+            <p>Width:</p>
+            <p>Height:</p>            
+        </div>
+        <div id="right-bottom" class="bottom float-right">
+            <p>Radius:</p>
+            <p>Area:</p>
+            <p>Perimeter:</p>            
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
