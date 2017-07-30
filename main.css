@@ -67,7 +67,7 @@ button {
 #canvas {
     height: 600px;
     width: 850px;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 #shape-input{
@@ -93,26 +93,26 @@ button {
     font-size:1.5em;
 }
 
-
-.created-square {
+ .square {
     background-color: red;
     position: absolute;
 }
 
-.created-rect {
+.rectangle {
     background-color: green;
     position: absolute;    
 }
 
-.created-circle {
+.circle {
     background-color: purple;
     border-radius: 50%;
     position: absolute;    
     
 }
 
-.created-triangle {
+.triangle {
     width: 0;
 	height: 0;
     position: absolute;        
-} 
+}  
+

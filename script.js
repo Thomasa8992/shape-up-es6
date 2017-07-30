@@ -37,28 +37,50 @@ class Shapes {
         this.perimeter = perimeter;
   }
   
+  shapeText(){
+      let shapeNameText = document.createElement('span'),
+      shapeHeightText = document.createElement('span'),
+      shapeWidthText = document.createElement('span'),
+      shapeRadiusText = document.createElement('span'),
+      shapeAreaText = document.createElement('span'),
+      shapePerimeterText = document.createElement('span');
+
+      shapeNameText.innerHTML = " " + this.shapeName;
+      shapeHeightText.innerHTML = " " + this.height;
+      shapeWidthText.innerHTML = " " + this.width;
+      shapeRadiusText.innerHTML = " " + this.radius;
+      shapeAreaText.innerHTML = " " + this.area;
+      shapePerimeterText.innerHTML = " " + this.perimeter;
+
+      shapeName.appendChild(shapeNameText);
+      shapeHeight.appendChild(shapeHeightText);
+      shapeWidth.appendChild(shapeWidthText);
+      shapeRadius.appendChild(shapeRadiusText);
+      shapeArea.appendChild(shapeAreaText);
+      shapePerimeter.appendChild(shapePerimeterText);
+  }
+
   describe() {
-    let shapeNameText = document.createElement('span'),
-    shapeHeightText = document.createElement('span');
-    shapeNameText.innerHTML = " " + this.shapeName;
     if (this.shapeName === "Square"){
       this.height = sideLengths.value;
       this.width = sideLengths.value;
       this.radius = "NA";
-      this.area = "NA";
+      this.area = sideLengths.value * 2;
       this.perimeter = sideLengths.value * 4; 
-      shapeName.appendChild(shapeNameText);
-      shapeHeight.appendChild(shapeHeightText);
-      
-       
+      square.shapeText();
     } else if (this.shapeName === "Rectangle"){
-      shapeName.appendChild(shapeNameText);      
-    }
+      this.height = rectHeight.value;
+      this.width = rectWidth.value;
+      this.radius = "NA";
+      this.area = rectHeight.value * rectWidth.value;
+      this.perimeter = 2 * (rectHeight.value + rectWidth.value); 
+      rectangle.shapeText();
+      
   }
-
+}
 
   drawSquare() {
-    squareBtn.addEventListener("click", function(){
+    squareBtn.addEventListener("click", () => {
       // console.log(squareBtn);
       // console.log(sideLengths.value);
        let square = document.createElement("div");     
@@ -66,19 +88,17 @@ class Shapes {
       square.style.height = sideLengths.value + "px",
       square.style.width =  sideLengths.value + "px";
       console.log("squarebtn clicked");
-      describeSquare();
       getRandomPosition(square);     
     });
   }
 
   drawRectangle() {
-    rectBtn.addEventListener("click", function(){
+    rectBtn.addEventListener("click", () => {
       // console.log(squareBtn);
       // console.log(sideLengths.value);
       let rect = document.createElement("div");   
       rect.className = "created-rect";
-      rect.style.height = rectHeight.value + "px",
-      rect.style.width = rectWidth.value  + "px";
+ 
       console.log("rectbtn clicked"); 
       describeRectangle()
       getRandomPosition(rect);   
@@ -112,8 +132,6 @@ class Shapes {
     });
   }
 }
-
-
 
 class Circle extends Shapes { 
   constructor(radius) {
@@ -162,3 +180,4 @@ function describeSquare() {
 function describeRectangle() {
       rectangle.describe();
 }
+
