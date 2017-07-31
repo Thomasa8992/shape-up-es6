@@ -99,10 +99,10 @@ class Shape {
 class Square extends Shape {
     constructor() {
         super('square');
-        this.height = sideLength.value + 'px';
-        this.width = sideLength.value + 'px';
-        this.shape.style.width = sideLength.value;
-        this.shape.style.height = sideLength.value ;
+        this.height = sideLength.value;
+        this.width = sideLength.value;
+        this.shape.style.width = sideLength.value + 'px';
+        this.shape.style.height = sideLength.value + 'px';
         this.radius = "NA";
         this.area = sideLength.value * 2;
         this.perimeter = sideLength.value * 4; 
