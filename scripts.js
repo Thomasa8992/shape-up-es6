@@ -30,7 +30,7 @@ class Shape {
         this.width = width;
         this.radius = radius;
         this.shape.addEventListener("dblclick", this.removeShape.bind(this));       
-        this.shape.addEventListener("click", this.describe.bind(this));        
+        this.shape.addEventListener("click", this.describe.bind(this));  
   }
 
     describe(){
@@ -63,11 +63,6 @@ class Shape {
         shapePerimeter.appendChild(shapePerimeterText);
         
     }  
-
-    
-    delete(){
-    
-}    
 
     getRandomPosition() {
         let availW = canvas.offsetWidth  - 60,
@@ -155,16 +150,28 @@ class Triangle extends Shape {
 
 const makeSquare = () => {
     new Square();
+    clearText(sideLength);
 }    
 
 const makeRectangle = () => {
     new Rectangle();
+    clearText(rectHeight);
+    clearText(rectWidth);
+    
 } 
 
 const makeCircle = () => {
     new Circle();
+    clearText(circleRadius);    
 } 
 
 const makeTriangle = () => {
     new Triangle();
+    clearText(triHeight);
 } 
+
+function clearText(element){
+if(element !== " "){
+    element.value = "";
+    }
+}
