@@ -34,10 +34,6 @@ class Shape {
          
   }
 
-    showText(){
-        console.log(shapeName);
-    }
-
     describe(){
         let shapeNameText = document.createElement('span'),
         shapeHeightText = document.createElement('span'),
@@ -59,7 +55,6 @@ class Shape {
         shapeRadius.appendChild(shapeRadiusText);
         shapeArea.appendChild(shapeAreaText);
         shapePerimeter.appendChild(shapePerimeterText);
-
         
     }  
 
@@ -76,7 +71,7 @@ class Shape {
         canvas.appendChild(this.shape);
         console.log('im a: ' + this.shape.className);
         this.getRandomPosition();
-        // this.describe();
+        this.describe();
     }
 
     removeShape(){
@@ -117,6 +112,11 @@ class Circle extends Shape {
         super('circle');
         this.shape.style.height = circleRadius.value + "px";
         this.shape.style.width = circleRadius.value + "px";
+        this.height = "NA";
+        this.width = "NA";
+        this.radius = Math.round(circleRadius.value /2);
+        this.area = "NA";
+        this.perimeter = "NA";
         this.draw();
     }
 }
@@ -126,7 +126,8 @@ class Triangle extends Shape {
         super('triangle');
         this.shape.style.borderRight = triHeight.value + "px solid transparent",
         this.shape.style.borderBottom = triHeight.value + "px solid yellow",
-        this.shape.style.borderTop = triHeight.value + "px solid transparent",  
+        this.shape.style.borderTop = triHeight.value + "px solid transparent",
+        this.area = 0.5 * 45 * triHeight.value;  
         this.draw();
     }
 }
