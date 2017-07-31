@@ -22,10 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     rectangle.drawRectangle();
     circle.drawCircle();
     triangle.drawTriangle();
-    // square.describe();
-    // circle.describe();
-    // rectangle.describe();
-    // triangle.describe();
   });
 class Shapes {
   constructor(shapeName, height, width, radius, area, perimeter) {

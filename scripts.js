@@ -31,7 +31,6 @@ class Shape {
         this.radius = radius;
         this.shape.addEventListener("dblclick", this.removeShape.bind(this));       
         this.shape.addEventListener("click", this.describe.bind(this));        
-         
   }
 
     describe(){
@@ -41,6 +40,13 @@ class Shape {
         shapeRadiusText = document.createElement('span'),
         shapeAreaText = document.createElement('span'),
         shapePerimeterText = document.createElement('span');
+
+        shapeName.innerHTML = ('Shape Name: '),
+        shapeHeight.innerHTML = ('Height: '),
+        shapeWidth.innerHTML = ('Width: '),
+        shapeRadius.innerHTML = ('Radius: '), 
+        shapeArea.innerHTML = ('Area: '),
+        shapePerimeter.innerHTML = ('Perimeter: ');
 
         shapeNameText.innerHTML = " " + this.shape.className;
         shapeHeightText.innerHTML = " " + this.height;
@@ -57,6 +63,11 @@ class Shape {
         shapePerimeter.appendChild(shapePerimeterText);
         
     }  
+
+    
+    delete(){
+    
+}    
 
     getRandomPosition() {
         let availW = canvas.offsetWidth  - 60,
@@ -76,6 +87,12 @@ class Shape {
 
     removeShape(){
         this.shape.remove();
+        shapeName.innerHTML = ('Shape Name:  '),
+        shapeHeight.innerHTML = ('Height:  '),
+        shapeWidth.innerHTML = ('Width:  '),
+        shapeRadius.innerHTML = ('Radius:  '), 
+        shapeArea.innerHTML = ('Area:  '),
+        shapePerimeter.innerHTML = ('Perimeter:  ');
     }
 }
 
@@ -84,8 +101,8 @@ class Square extends Shape {
         super('square');
         this.height = sideLength.value + 'px';
         this.width = sideLength.value + 'px';
-        this.shape.style.width = sideLength.value + 'px';
-        this.shape.style.height = sideLength.value + 'px';
+        this.shape.style.width = sideLength.value;
+        this.shape.style.height = sideLength.value ;
         this.radius = "NA";
         this.area = sideLength.value * 2;
         this.perimeter = sideLength.value * 4; 
@@ -112,11 +129,11 @@ class Circle extends Shape {
         super('circle');
         this.shape.style.height = circleRadius.value + "px";
         this.shape.style.width = circleRadius.value + "px";
-        this.height = "NA";
-        this.width = "NA";
-        this.radius = Math.round(circleRadius.value /2);
+        this.height = circleRadius.value;
+        this.width = circleRadius.value;
+        this.radius = Math.round(Math.PI * circleRadius.value * circleRadius.value);
         this.area = "NA";
-        this.perimeter = "NA";
+        this.perimeter = Math.round(2 * Math.PI * circleRadius.value);
         this.draw();
     }
 }
@@ -127,7 +144,11 @@ class Triangle extends Shape {
         this.shape.style.borderRight = triHeight.value + "px solid transparent",
         this.shape.style.borderBottom = triHeight.value + "px solid yellow",
         this.shape.style.borderTop = triHeight.value + "px solid transparent",
-        this.area = 0.5 * 45 * triHeight.value;  
+        this.height = triHeight.value,
+        this.width = triHeight.value,
+        this.perimeter = (triHeight.value * 3),
+        this.area = ((triHeight.value * triHeight.value) / 2),  
+        this.radius = "NA";        
         this.draw();
     }
 }
