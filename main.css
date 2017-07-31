@@ -67,7 +67,7 @@ button {
 #canvas {
     height: 600px;
     width: 850px;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 #shape-input{
